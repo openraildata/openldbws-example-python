@@ -46,9 +46,6 @@ print("Trains at " + res.locationName)
 print("===============================================================================")
 
 services = res.trainServices.service
-
-i = 0
-while i < len(services):
-    t = services[i]
-    print(t.std + " to " + t.destination.location[0].locationName + " - " + t.etd)
-    i += 1
+	
+for service in services:
+	print(service.std + " to " + service.destination.location[0].locationName + " - " + service.etd)
