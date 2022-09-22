@@ -16,19 +16,20 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-from zeep import Client
-from zeep import xsd
+from zeep import Client, Settings, xsd
 from zeep.plugins import HistoryPlugin
 
 LDB_TOKEN = ''
-WSDL = 'http://lite.realtime.nationalrail.co.uk/OpenLDBWS/wsdl.aspx?ver=2017-10-01'
+WSDL = 'http://lite.realtime.nationalrail.co.uk/OpenLDBWS/wsdl.aspx?ver=2021-11-01'
 
 if LDB_TOKEN == '':
     raise Exception("Please configure your OpenLDBWS token in getDepartureBoardExample!")
 
+settings = Settings(strict=False)
+
 history = HistoryPlugin()
 
-client = Client(wsdl=WSDL, plugins=[history])
+client = Client(wsdl=WSDL, settings=settings, plugins=[history])
 
 header = xsd.Element(
     '{http://thalesgroup.com/RTTI/2013-11-28/Token/types}AccessToken',
