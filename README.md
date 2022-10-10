@@ -13,9 +13,9 @@ signing up at the following URL:
 
 Edit `getDepartureBoardExample.py` and set `LDB_TOKEN` to your own token.
 
-Install [Zeep](https://python-zeep.readthedocs.io/en/master/) using `pip`:
+Install dependencies using `pip`:
 
-`pip install zeep`  
+`pip install -r requirements.txt`  
 
 Running `getDepartureBoardExample.py` will show you departures for
 London Euston.
