@@ -34,7 +34,7 @@ variable.
 Support
 -------
 
-This code has been tested on Python 3.10.4.
+This code has been tested on Python 3.12.1.
 
 For support and questions with using the OpenLDBWS, please use the
 forum at the following URL:
